@@ -56,7 +56,7 @@ namespace Service2
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHealthChecks("", new HealthCheckOptions
+                endpoints.MapHealthChecks("/health", new HealthCheckOptions
                 {
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
                 });
