@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Service2.HealthChecks;
 
 namespace Service2
 {
@@ -34,7 +35,8 @@ namespace Service2
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Service2", Version = "v1" });
             });
-            services.AddHealthChecks();
+            services.AddHealthChecks()
+                .AddCheck<RemoteHealthCheck>(nameof(RemoteHealthCheck));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
