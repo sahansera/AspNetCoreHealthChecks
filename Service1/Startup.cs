@@ -34,7 +34,8 @@ namespace Service1
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Service1", Version = "v1" });
             });
-            services.AddHealthChecks();
+            services.AddHealthChecks()
+                .AddRedis(Configuration["Redis:ConnectionString"]);;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
