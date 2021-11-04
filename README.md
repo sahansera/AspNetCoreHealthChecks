@@ -1,7 +1,7 @@
 # Welcome to ASP.NET Core Health Checks Tutorial 👋
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](sahansera.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
-[![Twitter: Sahan91](https://img.shields.io/twitter/follow/Sahan91.svg?style=social)](https://twitter.com/Sahan91)
+[![Twitter: _SahanSera](https://img.shields.io/twitter/follow/_SahanSera.svg?style=social)](https://twitter.com/_SahanSera)
 
 ![](https://sahansera.dev/static/3b38887a21920c8226bf32bca797cbe6/75474/aspdotnet-core-health-checks-2.jpg)
 
@@ -33,8 +33,8 @@ Please share this Repository within your developer community, if you think that 
 👤 **Sahan Serasinghe**
 
 * Website: https://sahansera.dev
-* Twitter: [@Sahan91](https://twitter.com/Sahan91)
-* Github: [@sahan91](https://github.com/sahan91)
+* Twitter: [@_SahanSera](https://twitter.com/_SahanSera)
+* Github: [@sahansera](https://github.com/sahansera)
 * LinkedIn: [@sahanserasinghe](https://linkedin.com/in/sahanserasinghe)
 
 ## Contributing
