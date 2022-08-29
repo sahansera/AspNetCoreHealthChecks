@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Net.Http;
 
 namespace Monitor
 {
@@ -19,9 +20,18 @@ namespace Monitor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
-            services.AddHealthChecksUI()
-                .AddInMemoryStorage();
+
+            services.AddHealthChecksUI(setup =>
+            {
+                setup.UseApiEndpointHttpMessageHandler(sp =>
+                {
+                    return new HttpClientHandler
+                    {
+                        ClientCertificateOptions = ClientCertificateOption.Manual,
+                        ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, cetChain, policyErrors) => { return true; }
+                    };
+                });
+            }).AddInMemoryStorage();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +59,6 @@ namespace Monitor
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                
                 endpoints.MapHealthChecksUI();
             });
         }
